@@ -5,38 +5,36 @@ import java.util.Scanner;
 import Loja.MenuComprar.Comprar;
 import Loja.MenuVender.Vender;
 
-public class Loja {
+public abstract class Loja {
 
     public static void menuLoja() {
         Scanner in = new Scanner(System.in);
-        int menuEntrada;
-        boolean isEntrada = true;
 
-        try {
-            while (isEntrada) {
+        String menuOp;
+        boolean isStart = true;
+
+            while (isStart) {
 
                 System.out.println("+------------------------------------------------+");
                 System.out.println("|         --->xxx SEJA BEM-VINDO xxx<---         |");
                 System.out.println("+------------------------------------------------+");
                 System.out.println("|                  1 - Comprar                   |");
                 System.out.println("|                  2 - Vender                    |");
-                System.out.println("|                  0 - Sair                      |");
+                System.out.println("|             0 - Voltar a Fazenda               |");
                 System.out.println("+------------------------------------------------+");
                 System.out.print("Digite uma opção: ");
 
-                menuEntrada = in.nextInt();
+                menuOp = in.nextLine();
 
-                switch (menuEntrada) {
-                    case 1:
-                        isEntrada = true;
+                switch (menuOp) {
+                    case "1":
                         Comprar.menuComprar();
                         break;
-                    case 2:
-                        isEntrada = true;
+                    case "2":
                         Vender.menuVender();
                         break;
-                    case 0:
-                        isEntrada = false;
+                    case "0":
+                        isStart = false;
                         break;
                     default:
                         System.out.println("+------------------------------------------------+");
@@ -47,19 +45,6 @@ public class Loja {
             System.out.println("+------------------------------------------------+");
             System.out.println("|          --->xxx VOLTE SEMPRE! xxx<---         |");
             System.out.println("+------------------------------------------------+");
-
-        } catch (Exception e) {
-            //throw new RuntimeException(e);
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-            System.out.println("+------------------------------------------------+");
-        }
-    }
-
-    public static void main(String[] args) {
-
-        Loja pedido = new Loja();
-        pedido.menuLoja();
     }
 }
 

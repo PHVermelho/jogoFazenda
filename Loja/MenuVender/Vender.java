@@ -7,10 +7,10 @@ public abstract class Vender {
     public static void menuVender() {
         Scanner in = new Scanner(System.in);
 
-        int menuEntrada;
-        boolean vendendo = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (vendendo) {
+        while (isStart) {
             System.out.println("+------------------------------------------------+");
             System.out.println("|                     Vender                     |");
             System.out.println("+------------------------------------------------+");
@@ -18,27 +18,27 @@ public abstract class Vender {
             System.out.println("|                 2 - Água                       |");
             System.out.println("|                 3 - Adubo                      |");
             System.out.println("|                 4 - Lote                       |");
-            System.out.println("|                 0 - Sair                       |");
+            System.out.println("|                 0 - Loja                       |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
+            menuOp = in.nextLine();
 
 
-            switch (menuEntrada) {
-                case 0:
-                    vendendo = false;
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     System.out.println("Case 1");
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
-                case 3:
+                case "3":
                     System.out.println("Case 3");
                     break;
-                case 4:
+                case "4":
                     System.out.println("Case 4");
                     break;
                 default:

@@ -17,10 +17,10 @@ public abstract class Comprar {
     public static void menuComprar() {
         Scanner in = new Scanner(System.in);
 
-        int menuEntrada;
-        boolean comprando = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (comprando) {
+        while (isStart) {
             System.out.println("+------------------------------------------------+");
             System.out.println("|                    Comprar                     |");
             System.out.println("+------------------------------------------------+");
@@ -28,25 +28,25 @@ public abstract class Comprar {
             System.out.println("|                 2 - Água                       |");
             System.out.println("|                 3 - Adubo                      |");
             System.out.println("|                 4 - Lote                       |");
-            System.out.println("|                 0 - Sair                       |");
+            System.out.println("|                 0 - Loja                       |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
-            switch (menuEntrada) {
-                case 0:
-                    comprando = false;
+            menuOp = in.nextLine();
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     menuEstacao();
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
-                case 3:
+                case "3":
                     System.out.println("Case 3");
                     break;
-                case 4:
+                case "4":
                     System.out.println("Case 4");
                     break;
                 default:
@@ -60,10 +60,10 @@ public abstract class Comprar {
     public static void menuEstacao() {
         Scanner in = new Scanner(System.in);
 
-        int menuEntrada;
-        boolean comprando = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (comprando) {
+        while (isStart) {
             System.out.println("+------------------------------------------------+");
             System.out.println("|                   Estação                      |");
             System.out.println("+------------------------------------------------+");
@@ -71,25 +71,25 @@ public abstract class Comprar {
             System.out.println("|                2 - Outono                      |");
             System.out.println("|                3 - Inverno                     |");
             System.out.println("|                4 - Primavera                   |");
-            System.out.println("|                0 - Sair                        |");
+            System.out.println("|                0 - Menu Loja                   |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
-            switch (menuEntrada) {
-                case 0:
-                    comprando = false;
+            menuOp = in.nextLine();
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     sementesVerao();
                     break;
-                case 2:
+                case "2":
                     sementesOutono();
                     break;
-                case 3:
+                case "3":
                     sementesInverno();
                     break;
-                case 4:
+                case "4":
                     sementesPrimavera();
                     break;
                 default:
@@ -106,30 +106,30 @@ public abstract class Comprar {
         Tomate tomate = new Tomate();
 
         Scanner in = new Scanner(System.in);
-        int menuEntrada;
-        boolean isEntrada = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (isEntrada) {
+        while (isStart) {
 
             System.out.println("+------------------------------------------------+");
             System.out.println("|                      Verão                     |");
             System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - Pimentão                       $$" + pimentao.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - Tomate                         $$" + tomate.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Sair                                      |");
+            System.out.println("|  1 - "+ pimentao.getNome() +"                       $$" + pimentao.getValorComprarSemente() + "     |");
+            System.out.println("|  2 - "+ tomate.getNome() +"                         $$" + tomate.getValorComprarSemente() + "     |");
+            System.out.println("|  0 - Menu Estação                              |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
+            menuOp = in.nextLine();
 
-            switch (menuEntrada) {
-                case 0:
-                    isEntrada = false;
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     System.out.println("Case 1");
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
                 default:
@@ -146,31 +146,31 @@ public abstract class Comprar {
         Cenoura cenoura = new Cenoura();
 
         Scanner in = new Scanner(System.in);
-        int menuEntrada;
-        boolean isEntrada = true;
+        String menuOp;
+        boolean isStart = true;
 
 
-        while (isEntrada) {
+        while (isStart) {
 
             System.out.println("+------------------------------------------------+");
             System.out.println("|                     Outono                     |");
             System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - Batata                         $$" + batata.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - Cenoura                        $$" + cenoura.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Sair                                      |");
+            System.out.println("|  1 - "+ batata.getNome() +"                         $$" + batata.getValorComprarSemente() + "     |");
+            System.out.println("|  2 - "+ cenoura.getNome() +"                        $$" + cenoura.getValorComprarSemente() + "     |");
+            System.out.println("|  0 - Menu Estação                              |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
+            menuOp = in.nextLine();
 
-            switch (menuEntrada) {
-                case 0:
-                    isEntrada = false;
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     System.out.println("Case 1");
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
                 default:
@@ -187,30 +187,30 @@ public abstract class Comprar {
         Brocolis brocolis = new Brocolis();
 
         Scanner in = new Scanner(System.in);
-        int menuEntrada;
-        boolean isEntrada = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (isEntrada) {
+        while (isStart) {
 
             System.out.println("+------------------------------------------------+");
             System.out.println("|                    Inverno                     |");
             System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - Alho                           $$" + alho.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - Brócolis                       $$" + brocolis.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Sair                                      |");
+            System.out.println("|  1 - "+ alho.getNome() +"                           $$" + alho.getValorComprarSemente() + "     |");
+            System.out.println("|  2 - "+ brocolis.getNome() +"                       $$" + brocolis.getValorComprarSemente() + "     |");
+            System.out.println("|  0 - Menu Estação                              |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
+            menuOp = in.nextLine();
 
-            switch (menuEntrada) {
-                case 0:
-                    isEntrada = false;
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     System.out.println("Case 1");
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
                 default:
@@ -227,30 +227,30 @@ public abstract class Comprar {
         Rabanete rabanete = new Rabanete();
 
         Scanner in = new Scanner(System.in);
-        int menuEntrada;
-        boolean isEntrada = true;
+        String menuOp;
+        boolean isStart = true;
 
-        while (isEntrada) {
+        while (isStart) {
 
             System.out.println("+------------------------------------------------+");
             System.out.println("|                    Primavera                   |");
             System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - Alface                          $$" + alface.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - Rabanete                        $$" + rabanete.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Sair                                      |");
+            System.out.println("|  1 - "+ alface.getNome() +"                          $$" + alface.getValorComprarSemente() + "     |");
+            System.out.println("|  2 - "+ rabanete.getNome() +"                        $$" + rabanete.getValorComprarSemente() + "     |");
+            System.out.println("|  0 - Menu Estação                              |");
             System.out.println("+------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
-            menuEntrada = in.nextInt();
+            menuOp = in.nextLine();
 
-            switch (menuEntrada) {
-                case 0:
-                    isEntrada = false;
+            switch (menuOp) {
+                case "0":
+                    isStart = false;
                     break;
-                case 1:
+                case "1":
                     System.out.println("Case 1");
                     break;
-                case 2:
+                case "2":
                     System.out.println("Case 2");
                     break;
                 default:
