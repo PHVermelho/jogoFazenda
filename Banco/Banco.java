@@ -3,7 +3,7 @@ package Banco;
 import java.util.Scanner;
 
 public abstract class Banco {
-    static double saldoFazenda = 10000;
+    static double saldoFazenda = 10000.0;
     static double saldoCredito;
     static double emprestimoNivel5 = 10000.0;
     static double emprestimoNivel10 = 20000.0;
@@ -79,6 +79,21 @@ public abstract class Banco {
         return investimento180;
     }
 
+    //--------ACERTA OS ESPAÇOS DO SALDO---------
+
+    public static void finalSaldo(){ //centraliza o nome
+        int limite = 36;
+        String saldoConvert = String.valueOf(saldoFazenda);
+
+        char[] nome = new char[limite];
+
+        for (int i = 0; i < limite - saldoConvert.length(); i++){ //coloca os espaços vazios no nome;
+            nome[i] = ' ';
+            System.out.print(nome[i]);
+        }
+    }
+
+    //--------MENU BANCO---------
     public static void menuBanco() {
         Scanner in = new Scanner(System.in);
 
@@ -86,16 +101,16 @@ public abstract class Banco {
         boolean isStart = true;
 
         while (isStart) {
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                     Banco                      |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|              1 - Saldo                         |");
-            System.out.println("|              2 - Crédito                       |");
-            System.out.println("|              3 - Empréstimo                    |");
-            System.out.println("|              4 - Investimentos                 |");
-            System.out.println("|              5 - Resumo Finanças               |");
-            System.out.println("|              0 - Voltar a Fazenda              |");
-            System.out.println("+------------------------------------------------+");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|                     Banco                       |");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|              1 - Saldo                          |");
+            System.out.println("|              2 - Crédito                        |");
+            System.out.println("|              3 - Empréstimo                     |");
+            System.out.println("|              4 - Investimentos                  |");
+            System.out.println("|              5 - Resumo Finanças                |");
+            System.out.println("|              0 - Voltar a Fazenda               |");
+            System.out.println("+-------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
             menuOp = in.nextLine();
@@ -118,9 +133,9 @@ public abstract class Banco {
                     isStart = false;
                     break;
                 default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|         --->xxx OPÇÃO INVÁLIDA xxx<---         |");
-                    System.out.println("+------------------------------------------------+");
+                    System.out.println("+-------------------------------------------------+");
+                    System.out.println("|         --->xxx OPÇÃO INVÁLIDA xxx<---          |");
+                    System.out.println("+-------------------------------------------------+");
             }
         }
     }

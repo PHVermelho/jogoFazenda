@@ -11,15 +11,15 @@ public abstract class Vender {
         boolean isStart = true;
 
         while (isStart) {
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                     Vender                     |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                 1 - Sementes                   |");
-            System.out.println("|                 2 - Água                       |");
-            System.out.println("|                 3 - Adubo                      |");
-            System.out.println("|                 4 - Lote                       |");
-            System.out.println("|                 0 - Loja                       |");
-            System.out.println("+------------------------------------------------+");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|                     Vender                      |");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|                 1 - Sementes                    |");
+            System.out.println("|                 2 - Água                        |");
+            System.out.println("|                 3 - Adubo                       |");
+            System.out.println("|                 4 - Lote                        |");
+            System.out.println("|                 0 - Loja                        |");
+            System.out.println("+-------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
             menuOp = in.nextLine();
@@ -42,9 +42,9 @@ public abstract class Vender {
                     System.out.println("Case 4");
                     break;
                 default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
+                    System.out.println("+-------------------------------------------------+");
+                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                    System.out.println("+-------------------------------------------------+");
             }
         }
     }

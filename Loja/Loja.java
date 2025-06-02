@@ -15,13 +15,13 @@ public abstract class Loja {
 
             while (isStart) {
 
-                System.out.println("+------------------------------------------------+");
-                System.out.println("|         --->xxx SEJA BEM-VINDO xxx<---         |");
-                System.out.println("+------------------------------------------------+");
-                System.out.println("|                  1 - Comprar                   |");
-                System.out.println("|                  2 - Vender                    |");
-                System.out.println("|             0 - Voltar a Fazenda               |");
-                System.out.println("+------------------------------------------------+");
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|         --->xxx SEJA BEM-VINDO xxx<---          |");
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|                  1 - Comprar                    |");
+                System.out.println("|                  2 - Vender                     |");
+                System.out.println("|             0 - Voltar a Fazenda                |");
+                System.out.println("+-------------------------------------------------+");
                 System.out.print("Digite uma opção: ");
 
                 menuOp = in.nextLine();
@@ -37,14 +37,14 @@ public abstract class Loja {
                         isStart = false;
                         break;
                     default:
-                        System.out.println("+------------------------------------------------+");
-                        System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                        System.out.println("+------------------------------------------------+");
+                        System.out.println("+-------------------------------------------------+");
+                        System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                        System.out.println("+-------------------------------------------------+");
                 }
             }
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|          --->xxx VOLTE SEMPRE! xxx<---         |");
-            System.out.println("+------------------------------------------------+");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|          --->xxx VOLTE SEMPRE! xxx<---          |");
+            System.out.println("+-------------------------------------------------+");
     }
 }
 

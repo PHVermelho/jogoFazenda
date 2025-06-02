@@ -84,6 +84,5 @@ public abstract class Legumes {
         System.out.println("Estação Ideal: " + estacaoIdeal);
         System.out.println("Valor Semente: R$" + valorComprarSemente);
         System.out.println("Valor Venda: R$" + valorVenda);
-        System.out.println("---------------xxx---------------");
     }
 }

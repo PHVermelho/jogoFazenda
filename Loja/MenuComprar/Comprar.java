@@ -14,22 +14,21 @@ import java.util.Scanner;
 
 public abstract class Comprar {
 
-    public static void menuComprar() {
+    public static void menuLote() {
         Scanner in = new Scanner(System.in);
 
         String menuOp;
         boolean isStart = true;
 
         while (isStart) {
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                    Comprar                     |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                 1 - Sementes                   |");
-            System.out.println("|                 2 - Água                       |");
-            System.out.println("|                 3 - Adubo                      |");
-            System.out.println("|                 4 - Lote                       |");
-            System.out.println("|                 0 - Loja                       |");
-            System.out.println("+------------------------------------------------+");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|                    Tamanho                      |");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|                 1 - are                         |");
+            System.out.println("|                 2 - acre                        |");
+            System.out.println("|                 3 - Hectare                     |");
+            System.out.println("|                 0 - Loja                        |");
+            System.out.println("+-------------------------------------------------+");
             System.out.print("Digite uma opção: ");
 
             menuOp = in.nextLine();
@@ -38,228 +37,269 @@ public abstract class Comprar {
                     isStart = false;
                     break;
                 case "1":
-                    menuEstacao();
+                    System.out.println("Case 1 - Are");
                     break;
                 case "2":
-                    System.out.println("Case 2");
+                    System.out.println("Case 2 - Acre");
                     break;
                 case "3":
-                    System.out.println("Case 3");
-                    break;
-                case "4":
-                    System.out.println("Case 4");
+                    System.out.println("Case 3 - Hectare");
                     break;
                 default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
+                    System.out.println("+-------------------------------------------------+");
+                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                    System.out.println("+-------------------------------------------------+");
             }
         }
     }
 
-    public static void menuEstacao() {
-        Scanner in = new Scanner(System.in);
 
-        String menuOp;
-        boolean isStart = true;
+public static void menuComprar() {
+    Scanner in = new Scanner(System.in);
 
-        while (isStart) {
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                   Estação                      |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                1 - Verão                       |");
-            System.out.println("|                2 - Outono                      |");
-            System.out.println("|                3 - Inverno                     |");
-            System.out.println("|                4 - Primavera                   |");
-            System.out.println("|                0 - Menu Loja                   |");
-            System.out.println("+------------------------------------------------+");
-            System.out.print("Digite uma opção: ");
+    String menuOp;
+    boolean isStart = true;
 
-            menuOp = in.nextLine();
-            switch (menuOp) {
-                case "0":
-                    isStart = false;
-                    break;
-                case "1":
-                    sementesVerao();
-                    break;
-                case "2":
-                    sementesOutono();
-                    break;
-                case "3":
-                    sementesInverno();
-                    break;
-                case "4":
-                    sementesPrimavera();
-                    break;
-                default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
-            }
+    while (isStart) {
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                    Comprar                      |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                 1 - Lotes                       |");
+        System.out.println("|                 2 - Água                        |");
+        System.out.println("|                 3 - Sementes                    |");
+        System.out.println("|                 4 - Adubo                       |");
+        System.out.println("|                 0 - Loja                        |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
+
+        menuOp = in.nextLine();
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                menuLote();
+                break;
+            case "2":
+                System.out.println("Case 2");
+                break;
+            case "3":
+                menuEstacao();
+                break;
+            case "4":
+                System.out.println("Case 4");
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
         }
     }
+}
 
-    public static void sementesVerao() {
+public static void menuEstacao() {
+    Scanner in = new Scanner(System.in);
 
-        Pimentao pimentao = new Pimentao();
-        Tomate tomate = new Tomate();
+    String menuOp;
+    boolean isStart = true;
 
-        Scanner in = new Scanner(System.in);
-        String menuOp;
-        boolean isStart = true;
+    while (isStart) {
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                   Estação                       |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                1 - Verão                        |");
+        System.out.println("|                2 - Outono                       |");
+        System.out.println("|                3 - Inverno                      |");
+        System.out.println("|                4 - Primavera                    |");
+        System.out.println("|                0 - Menu Loja                    |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
 
-        while (isStart) {
-
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                      Verão                     |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - "+ pimentao.getNome() +"                       $$" + pimentao.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - "+ tomate.getNome() +"                         $$" + tomate.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Menu Estação                              |");
-            System.out.println("+------------------------------------------------+");
-            System.out.print("Digite uma opção: ");
-
-            menuOp = in.nextLine();
-
-            switch (menuOp) {
-                case "0":
-                    isStart = false;
-                    break;
-                case "1":
-                    System.out.println("Case 1");
-                    break;
-                case "2":
-                    System.out.println("Case 2");
-                    break;
-                default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
-            }
+        menuOp = in.nextLine();
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                sementesVerao();
+                break;
+            case "2":
+                sementesOutono();
+                break;
+            case "3":
+                sementesInverno();
+                break;
+            case "4":
+                sementesPrimavera();
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
         }
     }
+}
 
-    public static void sementesOutono() {
+public static void sementesVerao() {
 
-        Batata batata = new Batata();
-        Cenoura cenoura = new Cenoura();
+    Pimentao pimentao = new Pimentao();
+    Tomate tomate = new Tomate();
 
-        Scanner in = new Scanner(System.in);
-        String menuOp;
-        boolean isStart = true;
+    Scanner in = new Scanner(System.in);
+    String menuOp;
+    boolean isStart = true;
 
+    while (isStart) {
 
-        while (isStart) {
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                      Verão                      |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|  1 - " + pimentao.getNome() + "                       $$" + pimentao.getValorComprarSemente() + "      |");
+        System.out.println("|  2 - " + tomate.getNome() + "                         $$" + tomate.getValorComprarSemente() + "      |");
+        System.out.println("|  0 - Menu Estação                               |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
 
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                     Outono                     |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - "+ batata.getNome() +"                         $$" + batata.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - "+ cenoura.getNome() +"                        $$" + cenoura.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Menu Estação                              |");
-            System.out.println("+------------------------------------------------+");
-            System.out.print("Digite uma opção: ");
+        menuOp = in.nextLine();
 
-            menuOp = in.nextLine();
-
-            switch (menuOp) {
-                case "0":
-                    isStart = false;
-                    break;
-                case "1":
-                    System.out.println("Case 1");
-                    break;
-                case "2":
-                    System.out.println("Case 2");
-                    break;
-                default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
-            }
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                System.out.println("Case 1");
+                break;
+            case "2":
+                System.out.println("Case 2");
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
         }
     }
+}
 
-    public static void sementesInverno() {
+public static void sementesOutono() {
 
-        Alho alho = new Alho();
-        Brocolis brocolis = new Brocolis();
+    Batata batata = new Batata();
+    Cenoura cenoura = new Cenoura();
 
-        Scanner in = new Scanner(System.in);
-        String menuOp;
-        boolean isStart = true;
+    Scanner in = new Scanner(System.in);
+    String menuOp;
+    boolean isStart = true;
 
-        while (isStart) {
 
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                    Inverno                     |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - "+ alho.getNome() +"                           $$" + alho.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - "+ brocolis.getNome() +"                       $$" + brocolis.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Menu Estação                              |");
-            System.out.println("+------------------------------------------------+");
-            System.out.print("Digite uma opção: ");
+    while (isStart) {
 
-            menuOp = in.nextLine();
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                     Outono                      |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|  1 - " + batata.getNome() + "                         $$" + batata.getValorComprarSemente() + "      |");
+        System.out.println("|  2 - " + cenoura.getNome() + "                        $$" + cenoura.getValorComprarSemente() + "      |");
+        System.out.println("|  0 - Menu Estação                               |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
 
-            switch (menuOp) {
-                case "0":
-                    isStart = false;
-                    break;
-                case "1":
-                    System.out.println("Case 1");
-                    break;
-                case "2":
-                    System.out.println("Case 2");
-                    break;
-                default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
-            }
+        menuOp = in.nextLine();
+
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                System.out.println("Case 1");
+                break;
+            case "2":
+                System.out.println("Case 2");
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
         }
     }
+}
 
-    public static void sementesPrimavera() {
+public static void sementesInverno() {
 
-        Alface alface = new Alface();
-        Rabanete rabanete = new Rabanete();
+    Alho alho = new Alho();
+    Brocolis brocolis = new Brocolis();
 
-        Scanner in = new Scanner(System.in);
-        String menuOp;
-        boolean isStart = true;
+    Scanner in = new Scanner(System.in);
+    String menuOp;
+    boolean isStart = true;
 
-        while (isStart) {
+    while (isStart) {
 
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|                    Primavera                   |");
-            System.out.println("+------------------------------------------------+");
-            System.out.println("|  1 - "+ alface.getNome() +"                          $$" + alface.getValorComprarSemente() + "     |");
-            System.out.println("|  2 - "+ rabanete.getNome() +"                        $$" + rabanete.getValorComprarSemente() + "     |");
-            System.out.println("|  0 - Menu Estação                              |");
-            System.out.println("+------------------------------------------------+");
-            System.out.print("Digite uma opção: ");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                    Inverno                      |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|  1 - " + alho.getNome() + "                           $$" + alho.getValorComprarSemente() + "      |");
+        System.out.println("|  2 - " + brocolis.getNome() + "                       $$" + brocolis.getValorComprarSemente() + "      |");
+        System.out.println("|  0 - Menu Estação                               |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
 
-            menuOp = in.nextLine();
+        menuOp = in.nextLine();
 
-            switch (menuOp) {
-                case "0":
-                    isStart = false;
-                    break;
-                case "1":
-                    System.out.println("Case 1");
-                    break;
-                case "2":
-                    System.out.println("Case 2");
-                    break;
-                default:
-                    System.out.println("+------------------------------------------------+");
-                    System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---        |");
-                    System.out.println("+------------------------------------------------+");
-            }
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                System.out.println("Case 1");
+                break;
+            case "2":
+                System.out.println("Case 2");
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
         }
     }
+}
+
+public static void sementesPrimavera() {
+
+    Alface alface = new Alface();
+    Rabanete rabanete = new Rabanete();
+
+    Scanner in = new Scanner(System.in);
+    String menuOp;
+    boolean isStart = true;
+
+    while (isStart) {
+
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|                    Primavera                    |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("|  1 - " + alface.getNome() + "                          $$" + alface.getValorComprarSemente() + "      |");
+        System.out.println("|  2 - " + rabanete.getNome() + "                        $$" + rabanete.getValorComprarSemente() + "      |");
+        System.out.println("|  0 - Menu Estação                               |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.print("Digite uma opção: ");
+
+        menuOp = in.nextLine();
+
+        switch (menuOp) {
+            case "0":
+                isStart = false;
+                break;
+            case "1":
+                System.out.println("Case 1");
+                break;
+            case "2":
+                System.out.println("Case 2");
+                break;
+            default:
+                System.out.println("+-------------------------------------------------+");
+                System.out.println("|        --->xxx ESCOLHA INVÁLIDA xxx<---         |");
+                System.out.println("+-------------------------------------------------+");
+        }
+    }
+}
 
 }
 
